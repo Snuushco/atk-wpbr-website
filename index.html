@@ -6,31 +6,21 @@
     <meta name="description" content="ATK-WPBR: De slimme tool voor het digitaal afhandelen van Aanvraag Toestemming Korpschef (ATK) voor het legitimatiebewijs volgens de WPBR. Automatische optimalisatie en foutloze aanvragen.">
     <meta name="keywords" content="ATK, WPBR, legitimatiebewijs, Korpschef, beveiligingsorganisatie, vergunningplicht, beveiligingswetgeving, Praesidion Security">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="http://www.atk-wpbr.nl">
-    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="canonical" href="https://www.atk-wpbr.nl">
     <link rel="icon" type="image/png" href="favicon.png">
     <title>ATK-WPBR | Digitale Aanvraag Toestemming Korpschef voor WPBR</title>
     <style>
-        /* 
-        Color Scheme Selection Instructions:
-        1. Manual: Replace root variables with custom colors
-        2. Logo-based: Extract colors from logo_atk_wpbr.jpg
-        3. AI-generated (default): Professional security industry colors
-        */
         :root {
-            --primary: #1a365d;    /* Deep navy blue - trust, security */
-            --secondary: #2c5282;  /* Medium blue - professionalism */
-            --accent: #e53e3e;     /* Red - urgency, importance */
-            --light: #f7fafc;      /* Off-white - clean, modern */
-            --dark: #2d3748;       /* Dark gray - text */
-            --success: #38a169;    /* Green - positive actions */
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #e53e3e;
+            --accent-hover: #c53030;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --success: #38a169;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -39,289 +29,272 @@
             background: var(--light);
         }
 
+        /* ── Header ── */
         header {
             background: var(--primary);
             color: white;
-            padding: 1rem;
+            padding: 0.75rem 1rem;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
         }
-
         .header-content {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1rem;
         }
-
-        .logo {
-            height: 50px;
-            width: auto;
-        }
-
-        .location {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        main {
-            margin-top: 80px;
-            padding: 2rem 1rem;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)),
-                        url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 4rem 1rem;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.2s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-        }
-
-        .services {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .service-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .tool-benefits {
-            background: var(--light);
-            padding: 4rem 1rem;
-            margin: 2rem 0;
-        }
-
-        .benefits-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .benefit-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--accent);
-        }
-
-        .benefit-card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .logo { height: 48px; width: auto; }
+        .main-nav {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.45rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+            background: rgba(255,255,255,0.08);
+        }
+        .nav-link:hover { background: rgba(255,255,255,0.18); }
+        .tool-link-btn {
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 0.45rem 1.1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .tool-link-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
         }
 
-        .benefit-card h3::before {
-            content: "✓";
-            color: var(--success);
-            font-weight: bold;
+        /* ── Hero ── */
+        main { margin-top: 72px; }
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, #3182ce 100%);
+            color: white;
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
         }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.92;
+            line-height: 1.7;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+        .cta-primary { background: var(--accent); color: white; }
+        .cta-secondary { background: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.4); }
+        .cta-secondary:hover { background: rgba(255,255,255,0.25); }
+
+        /* ── Steps ── */
+        .steps-overview {
+            padding: 4rem 1.5rem 3rem;
+            background: white;
+        }
+        .steps-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .section-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .section-subtitle {
+            color: #718096;
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+        .steps-list {
+            list-style: none;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+            counter-reset: step;
+        }
+        .steps-list li {
+            counter-increment: step;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            background: var(--light);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            font-weight: 500;
+            transition: transform 0.2s;
+        }
+        .steps-list li:hover { transform: translateX(4px); }
+        .steps-list li::before {
+            content: counter(step);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            font-weight: 700;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        /* ── Services ── */
+        .services {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+        .service-card .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+        .service-card h3 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.15rem; }
+        .service-card p { color: #718096; font-size: 0.95rem; }
+
+        /* ── Benefits ── */
+        .tool-benefits {
+            background: linear-gradient(180deg, var(--light) 0%, #edf2f7 100%);
+            padding: 4rem 1.5rem;
+        }
+        .benefits-container { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        .benefit-card {
+            background: white;
+            padding: 1.75rem;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+            border-left: 4px solid var(--accent);
+            transition: transform 0.2s;
+        }
+        .benefit-card:hover { transform: translateY(-3px); }
+        .benefit-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .benefit-card h3::before { content: "✓"; color: var(--success); font-weight: bold; font-size: 1.2rem; }
+        .benefit-card p { color: #718096; font-size: 0.95rem; }
 
         .disclaimer {
             background: var(--secondary);
             color: white;
-            padding: 1.5rem;
+            padding: 1.25rem 1.5rem;
             border-radius: 10px;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             text-align: center;
-        }
-
-        .disclaimer p {
             max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
+            margin-left: auto;
+            margin-right: auto;
         }
+        .disclaimer p { font-size: 1rem; }
 
+        /* ── Footer ── */
         footer {
             background: var(--dark);
             color: white;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1.5rem;
             text-align: center;
-            margin-top: 4rem;
         }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
+        .footer-content p { margin-bottom: 0.3rem; }
+        .parent-org { font-size: 0.85rem; opacity: 0.7; }
+        footer a { color: rgba(255,255,255,0.8); text-decoration: underline; }
+        footer a:hover { color: white; }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* ── Animations ── */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
+        .animate-in { animation: fadeInUp 0.6s ease-out both; }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
 
-        .parent-org {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-top: 1rem;
-        }
-
+        /* ── Responsive ── */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .location {
-                text-align: center;
-            }
-
-            .benefit-card {
-                padding: 1.5rem;
-            }
-        }
-
-        .steps-overview {
-            background: var(--light);
-            padding: 3rem 1rem 2rem 1rem;
-            margin-bottom: 2rem;
-        }
-        .steps-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .steps-overview h2 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-        .steps-list {
-            list-style: decimal inside;
-            font-size: 1.15rem;
-            color: var(--dark);
-            text-align: left;
-            margin: 0 auto;
-            max-width: 500px;
-            padding-left: 0;
-        }
-        .steps-list li {
-            margin-bottom: 1rem;
-            background: white;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-            padding: 1rem 1.5rem;
-            font-weight: 500;
-        }
-        @media (max-width: 600px) {
-            .steps-list li {
-                padding: 0.8rem 1rem;
-                font-size: 1rem;
-            }
-        }
-        .main-nav {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .nav-link {
-            color: white;
-            background: var(--secondary);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1.2rem;
-            border-radius: 5px;
-            margin-left: 1.5rem;
-            transition: background 0.2s, color 0.2s;
-            border: none;
-            display: inline-block;
-        }
-        .nav-link:hover {
-            background: var(--accent);
-            color: white;
-        }
-        .tool-link-btn {
-            background: var(--accent);
-            color: #fff;
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 0.5rem 1.2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-left: 0.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: background 0.2s, transform 0.2s;
-            display: inline-block;
-        }
-        .tool-link-btn:hover {
-            background: var(--secondary);
-            color: #fff;
-            transform: translateY(-2px) scale(1.04);
-        }
-        @media (max-width: 900px) {
-            .header-content {
-                flex-direction: column;
-                gap: 0.7rem;
-            }
-            .main-nav {
-                margin-left: 0;
-                flex-direction: column;
-                gap: 0.7rem;
-                width: 100%;
-                align-items: flex-end;
-            }
-            .nav-link, .tool-link-btn {
-                margin-left: 0;
-                width: 100%;
-                text-align: right;
-            }
+            .header-content { flex-direction: column; gap: 0.5rem; }
+            .main-nav { justify-content: center; width: 100%; }
+            .hero { padding: 3.5rem 1rem 3rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .cta-button { width: 100%; max-width: 300px; justify-content: center; }
+            .services, .tool-benefits, .steps-overview { padding: 3rem 1rem; }
         }
     </style>
 </head>
@@ -330,85 +303,98 @@
         <div class="header-content">
             <img src="logo_tool.png" alt="ATK-WPBR Logo" class="logo">
             <nav class="main-nav">
-                <a href="blog.html" class="nav-link">Blog</a>
-                <a href="http://aanvraag.atk-wpbr.nl" class="tool-link-btn">ATK-WPBR Aanvraag Tool</a>
-                <a href="http://resize.atk-wpbr.nl/" class="tool-link-btn">ATK-WPBR Afbeelding Resizer</a>
+                <a href="blog.html" class="nav-link">📝 Blog</a>
+                <a href="https://aanvraag.atk-wpbr.nl" class="tool-link-btn">ATK Aanvraag Tool</a>
+                <a href="https://resize.atk-wpbr.nl" class="tool-link-btn">📐 Resize Tool</a>
             </nav>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Digitale Aanvraag Toestemming Korpschef</h1>
-            <p>De slimme oplossing voor het digitaal afhandelen van ATK-aanvragen voor het legitimatiebewijs volgens de Wet Particuliere Beveiligingsorganisaties en Recherchebureaus.</p>
-            <a href="http://aanvraag.atk-wpbr.nl" class="cta-button">Start uw ATK-aanvraag</a>
+            <h1 class="animate-in">Digitale Aanvraag Toestemming Korpschef</h1>
+            <p class="animate-in delay-1">De slimme oplossing voor het digitaal afhandelen van ATK-aanvragen voor het legitimatiebewijs volgens de Wet Particuliere Beveiligingsorganisaties en Recherchebureaus.</p>
+            <div class="hero-buttons animate-in delay-2">
+                <a href="https://aanvraag.atk-wpbr.nl" class="cta-button cta-primary">🚀 Start uw ATK-aanvraag</a>
+                <a href="https://resize.atk-wpbr.nl" class="cta-button cta-secondary">📐 Afbeeldingen resizen</a>
+            </div>
         </section>
 
         <section class="steps-overview">
             <div class="steps-container">
-                <h2>Zo werkt het aanvragen</h2>
+                <h2 class="section-title">Zo werkt het aanvragen</h2>
+                <p class="section-subtitle">In vijf eenvoudige stappen naar een correcte ATK-aanvraag</p>
                 <ol class="steps-list">
-                    <li><strong>Vul het formulier online in</strong></li>
-                    <li><strong>Voeg vereiste bijlagen toe</strong></li>
-                    <li><strong>Bijlagen worden automatisch aangepast aan vereiste afmetingen</strong></li>
-                    <li><strong>Controleer of je alles correct hebt ingevuld</strong></li>
-                    <li><strong>Verzend naar de gekozen afdeling korpscheftaken</strong></li>
+                    <li>Vul het formulier online in</li>
+                    <li>Voeg vereiste bijlagen toe</li>
+                    <li>Bijlagen worden automatisch aangepast</li>
+                    <li>Controleer of alles correct is ingevuld</li>
+                    <li>Verzend naar de afdeling Korpscheftaken</li>
                 </ol>
             </div>
         </section>
 
         <section class="services">
-            <h2>Onze Diensten</h2>
+            <h2 class="section-title" style="text-align:center;">Onze Diensten</h2>
+            <p class="section-subtitle" style="text-align:center;">Alles wat u nodig heeft voor een foutloze ATK-aanvraag</p>
             <div class="services-grid">
                 <article class="service-card">
+                    <div class="icon">📋</div>
                     <h3>ATK Aanvraag</h3>
                     <p>Volledig digitale aanvraag van Toestemming Korpschef voor het legitimatiebewijs volgens de WPBR.</p>
                 </article>
                 <article class="service-card">
+                    <div class="icon">🖼️</div>
                     <h3>Automatische Optimalisatie</h3>
                     <p>Geüploade afbeeldingen worden automatisch geoptimaliseerd naar de juiste specificaties.</p>
                 </article>
                 <article class="service-card">
+                    <div class="icon">✅</div>
                     <h3>Foutloze Verwerking</h3>
                     <p>Automatische controle en correcte invulling van het aanvraagformulier via het webformulier.</p>
                 </article>
                 <article class="service-card">
+                    <div class="icon">⚡</div>
                     <h3>Efficiënte Afhandeling</h3>
                     <p>Snellere verwerking door geautomatiseerde controles en correcte aanvragen.</p>
                 </article>
                 <article class="service-card">
+                    <div class="icon">📨</div>
                     <h3>Directe Indiening</h3>
                     <p>Correct ingevulde aanvragen worden direct ingediend bij de juiste instantie.</p>
+                </article>
+                <article class="service-card">
+                    <div class="icon">📐</div>
+                    <h3>Resize Tool</h3>
+                    <p>Pas pasfoto's, handtekeningen en logo's aan naar de exacte WPBR-specificaties. Direct in je browser.</p>
                 </article>
             </div>
         </section>
 
         <section class="tool-benefits">
             <div class="benefits-container">
-                <h2>Waarom de ATK-WPBR Tool?</h2>
-                <p style="text-align: center; margin-bottom: 2rem; font-size: 1.2rem;">
-                    De eerste volledig geautomatiseerde oplossing voor ATK-aanvragen
-                </p>
+                <h2 class="section-title">Waarom de ATK-WPBR Tool?</h2>
+                <p class="section-subtitle">De eerste volledig geautomatiseerde oplossing voor ATK-aanvragen</p>
                 <div class="benefits-grid">
                     <article class="benefit-card">
                         <h3>Automatische Afbeeldingoptimalisatie</h3>
-                        <p>Geüploade afbeeldingen worden automatisch geoptimaliseerd naar de juiste afmetingen en specificaties. Geen handmatige aanpassingen meer nodig.</p>
+                        <p>Afbeeldingen worden automatisch geoptimaliseerd naar de juiste afmetingen en specificaties. Geen handmatige aanpassingen meer nodig.</p>
                     </article>
                     <article class="benefit-card">
                         <h3>Foutloze Aanvragen</h3>
-                        <p>Het aanvraagformulier wordt automatisch correct ingevuld via het gekoppelde webformulier. Geen fouten meer in de aanvraagprocedure.</p>
+                        <p>Het aanvraagformulier wordt automatisch correct ingevuld. Geen fouten meer in de aanvraagprocedure.</p>
                     </article>
                     <article class="benefit-card">
                         <h3>Snellere Verwerking</h3>
-                        <p>Door de geautomatiseerde controle worden aanvragen direct correct ingediend. De afdeling Korpscheftaken kan hierdoor efficiënter werken.</p>
+                        <p>Geautomatiseerde controle zorgt dat aanvragen direct correct worden ingediend. De afdeling Korpscheftaken kan efficiënter werken.</p>
                     </article>
                     <article class="benefit-card">
                         <h3>Minder Afwijzingen</h3>
-                        <p>Door de geautomatiseerde controle worden aanvragen zelden afgewezen. Geen vertragingen meer door verkeerd ingevulde aanvragen.</p>
+                        <p>Door automatische validatie worden aanvragen zelden afgewezen. Geen vertragingen meer door incorrecte aanvragen.</p>
                     </article>
                 </div>
                 <div class="disclaimer">
-                    <p>Op dit moment is het (nog) niet mogelijk om de aanvraag in te dienen bij de commandant van de KMar.</p>
+                    <p>⚠️ Op dit moment is het (nog) niet mogelijk om de aanvraag in te dienen bij de commandant van de KMar.</p>
                 </div>
             </div>
         </section>
@@ -416,38 +402,10 @@
 
     <footer>
         <div class="footer-content">
-            <p>© 2025 ATK-WPBR. Alle rechten voorbehouden.</p>
-            <p class="parent-org">ATK-WPBR is een tool ontwikkeld door Snuushco in opdracht van Praesidion Security.</p>
+            <p>© 2025-2026 ATK-WPBR. Alle rechten voorbehouden.</p>
+            <p class="parent-org">ATK-WPBR is een tool ontwikkeld door <a href="https://github.com/Snuushco">Snuushco</a> in opdracht van <a href="https://www.praesidion.com">Praesidion Security</a>.</p>
         </div>
     </footer>
-
-    <script>
-        // Geolocation functionality
-        function updateLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(
-                    async (position) => {
-                        try {
-                            const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}`);
-                            const data = await response.json();
-                            const city = data.address.city || data.address.town || data.address.village;
-                            document.getElementById('userLocation').textContent = `Uw locatie: ${city}`;
-                        } catch (error) {
-                            document.getElementById('userLocation').textContent = 'Locatie niet beschikbaar';
-                        }
-                    },
-                    () => {
-                        document.getElementById('userLocation').textContent = 'Locatie niet beschikbaar';
-                    }
-                );
-            } else {
-                document.getElementById('userLocation').textContent = 'Geolocatie niet ondersteund';
-            }
-        }
-
-        // Initialize location on page load
-        document.addEventListener('DOMContentLoaded', updateLocation);
-    </script>
 
     <script type="application/ld+json">
     {
