@@ -1,10 +1,21 @@
-﻿{
+{
   "buildCommand": null,
   "outputDirectory": ".",
   "framework": null,
   "rewrites": [
-    { "source": "/resize", "destination": "/resize/index.html" },
-    { "source": "/aanvraag", "destination": "/aanvraag/index.html" }
+    { "source": "/resize", "destination": "/resize/index.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/aanvraag",
+      "destination": "https://atk-wpbr-tool-v2-0.onrender.com/login",
+      "permanent": false
+    },
+    {
+      "source": "/aanvraag/",
+      "destination": "https://atk-wpbr-tool-v2-0.onrender.com/login",
+      "permanent": false
+    }
   ],
   "headers": [
     {
