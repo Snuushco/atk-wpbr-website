@@ -3,6 +3,16 @@
   "outputDirectory": ".",
   "framework": null,
   "rewrites": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "aanvraag.atk-wpbr.nl"
+        }
+      ],
+      "destination": "https://atk-wpbr-tool-v2-0.onrender.com/:path*"
+    },
     { "source": "/resize", "destination": "/resize/index.html" }
   ],
   "redirects": [
